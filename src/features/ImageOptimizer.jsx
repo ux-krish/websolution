@@ -85,7 +85,7 @@ const ImageOptimizer = () => {
             {/* Custom file input container */}
             <label htmlFor="file-upload" className="flex flex-col items-center justify-center p-6 w-full max-w-sm bg-gray-100 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer hover:bg-gray-200">
               <FaUpload className="text-3xl text-gray-600 mb-2" /> {/* Upload icon */}
-              <span className="text-gray-600">Click to upload an image</span>
+              <span className="text-gray-600">Click to upload single/multiple images</span>
               <input
                 id="file-upload"
                 type="file"

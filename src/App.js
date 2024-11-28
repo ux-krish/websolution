@@ -9,7 +9,8 @@ import LiveWeather from "./features/LiveWeather";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/"> 
+    {/* /websolution/ */}
       <div className="flex flex-col min-h-screen bg-gradient-to-br bg-white text-neutral-800">
         <Header />
         <main className="flex-1 px-4 py-4 bg-neutral-50 shadow-inner shadow-neutral-100 rounded-xl m-4 mt-0 mb-0">
