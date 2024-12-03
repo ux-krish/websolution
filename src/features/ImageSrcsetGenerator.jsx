@@ -124,7 +124,7 @@ const ImageSrcsetGenerator = () => {
         <div className="flex flex-col items-center justify-center">
           <label
             htmlFor="file-upload"
-            className="flex flex-col items-center justify-center p-6 w-full max-w-sm bg-gray-100 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer hover:bg-gray-200"
+            className="shadow-lg hover:shadow-2xl transition-shadow duration-200 flex flex-col items-center justify-center p-6 w-full max-w-sm bg-gray-100 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer hover:bg-white "
           >
             <FaUpload className="text-3xl text-gray-600 mb-2" />
             <span className="text-gray-600">Click to upload multiple images</span>
@@ -161,7 +161,7 @@ const ImageSrcsetGenerator = () => {
                     {images.map(({ url, width, height, blob }) => (
                       <div key={width} className="flex flex-col items-center">
                         <button
-                          className="mt-2 mb-3 text-sm text-white rounded-full px-3 py-1 bg-indigo-500 hover:underline"
+                          className="mt-2  mb-3 text-sm px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl bg-sky-100 active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200"
                           onClick={() =>
                             downloadImage(blob, `${baseName}-${width}.jpg`)
                           }
@@ -171,7 +171,7 @@ const ImageSrcsetGenerator = () => {
                         <img
                           src={url}
                           alt={`Resized to ${width}px`}
-                          className="max-w-[150px] h-auto rounded border"
+                          className="max-w-[150px] h-auto rounded-xl shadow-md border-2 border-neutral-500 border-dashed"
                         />
                         <p className="mt-2 text-sm text-gray-600 text-center min-h-16">
                           path/{baseName}-{width}.jpg ({width}x{height})
@@ -190,10 +190,10 @@ const ImageSrcsetGenerator = () => {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 flex justify-end items-center">
             <button
               onClick={downloadAll}
-              className="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded"
+              className="px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl bg-lime-100 active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200"
             >
               Download All Images as ZIP
             </button>

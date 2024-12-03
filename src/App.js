@@ -5,8 +5,8 @@ import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 import ImageSrcsetGenerator from "./features/ImageSrcsetGenerator";
 import ImageOptimizer from "./features/ImageOptimizer";
-import LiveWeather from "./features/LiveWeather";
 import ImagesResizer from "./features/ImagesResizer";
+import PdfMaker from "./features/Pdfmaker";
 
 const App = () => {
   return (
@@ -31,8 +31,8 @@ const App = () => {
           <Route path="/" element={<MainContent />} />
           <Route path="/image-srcset-generator" element={<ImageSrcsetGenerator />} />
           <Route path="/image-optimizer" element={<ImageOptimizer />} />
-          <Route path="/live-weather" element={<LiveWeather />} />
           <Route path="/image-resizer" element={<ImagesResizer />} />
+          <Route path="/pdf-maker" element={<PdfMaker />} />
         </Routes>
         </main>
         <Footer />

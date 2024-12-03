@@ -68,7 +68,7 @@ const ImageResizer = () => {
         <div className="flex flex-col items-center justify-center">
           <label
             htmlFor="file-upload"
-            className="flex flex-col items-center justify-center p-6 w-full max-w-sm bg-gray-100 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer hover:bg-gray-200"
+            className="shadow-lg hover:shadow-2xl transition-shadow duration-200 flex flex-col items-center justify-center p-6 w-full max-w-sm bg-gray-100 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer hover:bg-white"
           >
             <FaUpload className="text-3xl text-gray-600 mb-2" />
             <span className="text-gray-600">Click to upload an image</span>
@@ -88,25 +88,25 @@ const ImageResizer = () => {
         <div className="flex justify-center space-x-4 mb-4">
           <button
             onClick={toggleFreeMode}
-            className={`px-4 py-2 ${cropMode === 'free' ? 'bg-red-500' : 'bg-gray-500'} text-white rounded-lg`}
+            className={`px-4 py-2 ${cropMode === 'free' ? 'bg-red-500/30' : 'bg-transparent'} px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200`}
           >
             {cropMode === 'free' ? 'Free Mode: ON' : 'Free Mode: OFF'}
           </button>
           <button
             onClick={() => handleAspectRatio(1 / 1)}
-            className={`px-4 py-2 ${aspectRatio === 1 / 1 ? 'bg-blue-500' : 'bg-gray-500'} text-white rounded-lg`}
+            className={`px-4 py-2 ${aspectRatio === 1 / 1 ? 'bg-indigo-500/40' : 'bg-transparent'} px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200`}
           >
             1:1
           </button>
           <button
             onClick={() => handleAspectRatio(16 / 9)}
-            className={`px-4 py-2 ${aspectRatio === 16 / 9 ? 'bg-blue-500' : 'bg-gray-500'} text-white rounded-lg`}
+            className={`px-4 py-2 ${aspectRatio === 16 / 9 ? 'bg-indigo-500/40' : 'bg-transparent'} px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200`}
           >
             16:9
           </button>
           <button
             onClick={() => handleAspectRatio(4 / 3)}
-            className={`px-4 py-2 ${aspectRatio === 4 / 3 ? 'bg-blue-500' : 'bg-gray-500'} text-white rounded-lg`}
+            className={`px-4 py-2 ${aspectRatio === 4 / 3 ? 'bg-indigo-500/40' : 'bg-transparent'} px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200`}
           >
             4:3
           </button>
@@ -116,8 +116,8 @@ const ImageResizer = () => {
       <div className="mt-4">
         {image && (
           <div>
-            <h3 className="text-xl font-semibold mb-2">Uploaded Image</h3>
-            <div className="relative">
+            <h3 className="text-xl font-semibold mb-4 mt-10 text-center">Uploaded Image</h3>
+            <div className="relative flex justify-center flex-wrap max-w-md mx-auto px-4">
               <Cropper
                 src={URL.createObjectURL(image)}
                 ref={cropperRef}
@@ -129,7 +129,7 @@ const ImageResizer = () => {
               />
               <button
                 onClick={handleCrop}
-                className="mt-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                className="mt-10 mb-14 px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200"
               >
                 Crop Image
               </button>
@@ -142,7 +142,7 @@ const ImageResizer = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={downloadCroppedImage}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            className="px-4 py-2 border-2 border-dashed border-neutral-500 text-neutral-800 font-semibold rounded-xl bg-lime-100 active:bg-black active:text-white active:border-black hover:border-indigo-800 hover:text-indigo-800 hover:bg-indigo-200/20 shadow-md hover:shadow-xl transition-shadow duration-200"
           >
             Download Cropped Image
           </button>
@@ -151,7 +151,7 @@ const ImageResizer = () => {
 
       {/* File Format Selection */}
       {image && (
-        <div className="mt-4">
+        <div className="mt-4 flex flex-col items-center">
           <h3 className="text-xl font-semibold mb-2">Select Image Format</h3>
           <div className="flex justify-center space-x-4">
             <select
