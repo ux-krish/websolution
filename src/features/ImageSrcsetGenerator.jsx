@@ -22,24 +22,24 @@ const ImageSrcsetGenerator = () => {
   };
 
   const generateSrcset = async (file, baseName) => {
-    const resolutions = [320, 640, 1280, 1920]; // common breakpoints
+    const resolutions = [3840, 2560, 1920, 1600, 1280, 1024, 640, 320]; // 8 major screen sizes
     const srcsetData = [];
-
+  
     const img = new Image();
     img.src = URL.createObjectURL(file);
-
+  
     img.onload = async () => {
       const pica = new Pica();
       for (const width of resolutions) {
         const canvas = document.createElement("canvas");
         canvas.width = width;
         canvas.height = (img.height / img.width) * width;
-
+  
         await pica.resize(img, canvas);
-
+  
         const blob = await pica.toBlob(canvas, "image/jpeg", 0.9);
         const url = URL.createObjectURL(blob);
-
+  
         srcsetData.push({
           url,
           width,
@@ -47,8 +47,8 @@ const ImageSrcsetGenerator = () => {
           blob,
         });
       }
-
-      setSrcsetImages(prevState => ({
+  
+      setSrcsetImages((prevState) => ({
         ...prevState,
         [baseName]: srcsetData,
       }));
@@ -76,12 +76,17 @@ const ImageSrcsetGenerator = () => {
     const srcsetString = srcsetImages[baseName]
       ?.map(({ width }) => `path/${baseName}-${width}.jpg ${width}w`)
       .join(", ");
-
+  
     const { width, height } = srcsetImages[baseName]?.[0] || {};
     return `<img 
       src="path/${baseName}-${width}.jpg" 
       srcset="${srcsetString}" 
-      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+      sizes="(max-width: 640px) 100vw, 
+             (max-width: 1024px) 50vw, 
+             (max-width: 1280px) 33vw, 
+             (max-width: 1600px) 25vw, 
+             (max-width: 1920px) 20vw, 
+             10vw"
       width="${width}" 
       height="${height}" 
       alt="Responsive Image" 
