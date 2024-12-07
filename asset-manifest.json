@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/websolution/static/css/main.d42f39bd.css",
-    "main.js": "/websolution/static/js/main.0049a110.js",
+    "main.css": "/websolution/static/css/main.b1b5073b.css",
+    "main.js": "/websolution/static/js/main.be1bdbb1.js",
     "static/js/52.0307c10a.chunk.js": "/websolution/static/js/52.0307c10a.chunk.js",
     "static/js/760.19dc4153.chunk.js": "/websolution/static/js/760.19dc4153.chunk.js",
     "static/js/265.ffce4f59.chunk.js": "/websolution/static/js/265.ffce4f59.chunk.js",
-    "static/media/fotor-ai-2024120612053.jpg": "/websolution/static/media/fotor-ai-2024120612053.1f8580ece261f33e17dd.jpg",
     "index.html": "/websolution/index.html"
   },
   "entrypoints": [
-    "static/css/main.d42f39bd.css",
-    "static/js/main.0049a110.js"
+    "static/css/main.b1b5073b.css",
+    "static/js/main.be1bdbb1.js"
   ]
 }
