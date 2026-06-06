@@ -1,0 +1,152 @@
+
+> websolution-store@0.1.0 start
+> react-scripts start
+
+Starting the development server...
+
+Compiled successfully!
+
+You can now view websolution-store in the browser.
+
+  Local:            http://localhost:3001/websolution
+  On Your Network:  http://192.168.0.240:3001/websolution
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Failed to compile.
+
+Syntax error: G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive. (68:5)
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+[1m[31mERROR[39m[22m in [1m./src/styles/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[2]!./src/styles/index.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(68:5) G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Failed to compile.
+
+Syntax error: G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive. (68:5)
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+[1m[31mERROR[39m[22m in [1m./src/styles/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[2]!./src/styles/index.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(68:5) G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Failed to compile.
+
+Syntax error: G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive. (68:5)
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+[1m[31mERROR[39m[22m in [1m./src/styles/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[2]!./src/styles/index.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(68:5) G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Failed to compile.
+
+Syntax error: G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive. (68:5)
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+[1m[31mERROR[39m[22m in [1m./src/styles/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[2]!./src/styles/index.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(68:5) G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Failed to compile.
+
+Syntax error: G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive. (68:5)
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+[1m[31mERROR[39m[22m in [1m./src/styles/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[5].use[2]!./src/styles/index.css)
+Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(68:5) G:\myapp\AppStore\src\styles\index.css The `bg-white/82` class does not exist. If `bg-white/82` is a custom class, make sure it is defined within a `@layer` directive.
+
+ [90m 66 | [39m
+ [90m 67 | [39m  [33m.feature-card[39m [33m{[39m
+[1m[31m>[39m[22m[90m 68 | [39m    [36m@apply[39m rounded-[33m[[39m1.35rem[33m][39m border border-white bg-white/82 p-4 shadow-[33m[[39m[36m0_18px_60px_rgba[39m[36m(15,23,42,0.08)[39m[33m][39m backdrop-blur-xl[33m;[39m
+ [90m    | [39m    [1m[31m^[39m[22m
+ [90m 69 | [39m  [33m}[39m
+ [90m 70 | [39m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m

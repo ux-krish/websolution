@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: #f7fbff;
+  }
+
+  ::selection {
+    background: #0f172a;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .app-shell {
+    background:
+      linear-gradient(115deg, rgba(14, 165, 233, 0.10), transparent 34%),
+      linear-gradient(245deg, rgba(132, 204, 22, 0.13), transparent 36%),
+      linear-gradient(180deg, #ffffff 0%, #f7fbff 48%, #eef7ff 100%);
+  }
+
+  .ambient-grid {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(14, 165, 233, 0.08), transparent 38%, rgba(132, 204, 22, 0.08));
+    background-position: top center;
+    background-size: 32px 32px, 32px 32px, 100% 100%;
+    mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  }
+
+  .brand-mark::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: conic-gradient(from 90deg, #22d3ee, #a3e635, #fb7185, #22d3ee);
+    animation: brand-spin 5s linear infinite;
+  }
+
+  .brand-mark::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 1rem;
+    background: #020617;
+  }
+
+  .tool-card,
+  .hero-image,
+  .stat-card {
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+  }
+
+  .feature-dropzone {
+    @apply flex w-full cursor-pointer flex-col items-center justify-center rounded-[1.5rem] border border-slate-200 bg-white/85 p-7 text-center shadow-[0_18px_60px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-[0_24px_80px_rgba(14,165,233,0.16)];
+  }
+
+  .feature-card {
+    @apply rounded-[1.35rem] border border-white bg-white/80 p-4 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl;
+  }
+
+  .feature-action {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-lg shadow-slate-950/20 transition hover:-translate-y-0.5 hover:bg-cyan-950 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .feature-soft-action {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:shadow-md;
+  }
+
+  .feature-icon-button {
+    @apply grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-700 hover:shadow-md;
+  }
+
+  .feature-input {
+    @apply h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 hover:border-cyan-300 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100 disabled:bg-slate-100 disabled:text-slate-400;
+  }
+
+  .feature-segment {
+    @apply flex-1 rounded-full border border-slate-200 px-4 py-3 text-sm font-black text-slate-700 transition hover:border-cyan-300 hover:bg-white;
+  }
+
+  .feature-segment-active {
+    @apply border-slate-950 bg-slate-950 text-white shadow-lg shadow-slate-950/20;
+  }
+
+  .feature-code {
+    @apply relative overflow-hidden rounded-[1.25rem] bg-slate-950 p-4 text-sm font-semibold text-white shadow-inner;
+  }
+}
+
+@keyframes brand-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
