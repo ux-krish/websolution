@@ -65,10 +65,12 @@ const MainContent = () => {
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const cardEls = cardRefs.current.filter(Boolean);
+    if (!cardEls.length) return undefined;
 
     const ctx = gsap.context(() => {
       if (reduceMotion) {
-        gsap.set(".hero-reveal, .tool-card, .stat-card", { autoAlpha: 1, y: 0, scale: 1 });
+        gsap.set(".hero-reveal, .tool-card, .stat-card", { opacity: 1, y: 0, scale: 1 });
         return;
       }
 
@@ -76,19 +78,19 @@ const MainContent = () => {
 
       tl.fromTo(
         ".hero-reveal",
-        { autoAlpha: 0, y: 28 },
-        { autoAlpha: 1, y: 0, duration: 0.85, stagger: 0.08 }
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.85, stagger: 0.08 }
       )
         .fromTo(
           ".stat-card",
-          { autoAlpha: 0, y: 18, scale: 0.95 },
-          { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.08 },
+          { opacity: 0, y: 18, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.08 },
           "-=0.45"
         )
         .fromTo(
           ".tool-card",
-          { autoAlpha: 0, y: 32, rotateX: -8, scale: 0.96 },
-          { autoAlpha: 1, y: 0, rotateX: 0, scale: 1, duration: 0.7, stagger: 0.08 },
+          { opacity: 0, y: 32, rotateX: -8, scale: 0.96 },
+          { opacity: 1, y: 0, rotateX: 0, scale: 1, duration: 0.7, stagger: 0.08 },
           "-=0.25"
         );
 
@@ -125,32 +127,46 @@ const MainContent = () => {
       });
     }, rootRef);
 
-    return () => ctx.revert();
+    // Cleanup: kill running tweens + tween caches for these elements
+    return () => {
+      ctx.revert();
+      cardEls.forEach((el) => gsap.killTweensOf(el));
+    };
   }, []);
+
+  // rAF-throttled mousemove so we don't fire a tween on every pixel move
+  const rafRefs = useRef({});
 
   const handleCardMove = (event, index) => {
     const card = cardRefs.current[index];
     if (!card) return;
 
-    const rect = card.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    const state = rafRefs.current[index] || (rafRefs.current[index] = { pending: false, x: 0, y: 0 });
+    if (state.pending) {
+      state.x = event.clientX;
+      state.y = event.clientY;
+      return;
+    }
+    state.pending = true;
+    state.x = event.clientX;
+    state.y = event.clientY;
 
-    gsap.to(card, {
-      rotateX: -y * 8,
-      rotateY: x * 8,
-      y: -8,
-      duration: 0.35,
-      ease: "power3.out",
-      transformPerspective: 900,
-    });
+    window.requestAnimationFrame(() => {
+      state.pending = false;
+      const rect = card.getBoundingClientRect();
+      const x = (state.x - rect.left) / rect.width - 0.5;
+      const y = (state.y - rect.top) / rect.height - 0.5;
 
-    gsap.to(card.querySelector(".tool-glow"), {
-      x: x * 70,
-      y: y * 70,
-      opacity: 0.85,
-      duration: 0.35,
-      ease: "power3.out",
+      // Mutually-exclusive tween (overwrite:'auto' default keeps it from piling up)
+      gsap.to(card, {
+        overwrite: "auto",
+        rotateX: -y * 8,
+        rotateY: x * 8,
+        y: -8,
+        duration: 0.4,
+        ease: "power3.out",
+        transformPerspective: 900,
+      });
     });
   };
 
@@ -158,19 +174,14 @@ const MainContent = () => {
     const card = cardRefs.current[index];
     if (!card) return;
 
+    rafRefs.current[index] && (rafRefs.current[index].pending = false);
+
     gsap.to(card, {
+      overwrite: "auto",
       rotateX: 0,
       rotateY: 0,
       y: 0,
-      duration: 0.45,
-      ease: "elastic.out(1, 0.45)",
-    });
-
-    gsap.to(card.querySelector(".tool-glow"), {
-      x: 0,
-      y: 0,
-      opacity: 0,
-      duration: 0.3,
+      duration: 0.5,
       ease: "power3.out",
     });
   };

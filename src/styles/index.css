@@ -58,6 +58,26 @@
   .stat-card {
     transform-style: preserve-3d;
     will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .tool-card .tool-glow {
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .tool-card:hover .tool-glow,
+  .tool-card:focus-visible .tool-glow {
+    opacity: 0.85;
+  }
+
+  @media (hover: none) {
+    .tool-card .tool-glow {
+      opacity: 0.6;
+    }
   }
 
   .feature-dropzone {
